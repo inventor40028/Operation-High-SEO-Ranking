@@ -1,0 +1,24 @@
+﻿# {BUSINESS}
+> {ONE_LINE_DESCRIPTION}
+
+## Company
+- [Home](https://{SITE_URL}/)
+- [About](https://{SITE_URL}/about)
+- [Contact](https://{SITE_URL}/contact)
+
+## Products / Services
+- [Main service](https://{SITE_URL}/services/{MAIN_SERVICE})
+- [Secondary](https://{SITE_URL}/services/{SECONDARY})
+
+## Popular pages
+- [Pricing](https://{SITE_URL}/pricing)
+- [FAQ](https://{SITE_URL}/faq)
+
+## Docs / Help
+- [Developer docs](https://{SITE_URL}/developers/docs)
+- [Help center](https://{SITE_URL}/help)
+
+## Blog
+- [{POST_TITLE_1}](https://{SITE_URL}/blog/{POST_SLUG_1})
+- [{POST_TITLE_2}](https://{SITE_URL}/blog/{POST_SLUG_2})
+- [{POST_TITLE_3}](https://{SITE_URL}/blog/{POST_SLUG_3})

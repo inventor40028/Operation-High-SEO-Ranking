@@ -1,0 +1,5 @@
+﻿keyword,url,intent,volume,clicks,impressions,ctr,position,target_track,notes
+car rental miami beach,/car-rental-miami-beach,transactional,1200,180,5400,0.033,4.2,business,high value money page
+what documents are needed to rent a car,/blog/what-documents-needed-rent-car,informational,590,24,3100,0.008,11.8,business,page 2 -> page 1 candidate
+car rental api,/developers/api/car-rental,transactional,420,66,1900,0.035,3.1,developer,developer landing page
+how does a car rental deposit work,/blog/how-car-rental-deposit-works,informational,780,31,4200,0.007,9.4,business,add FAQ schema

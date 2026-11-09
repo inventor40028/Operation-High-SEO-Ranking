@@ -1,0 +1,24 @@
+﻿# Cloudflare Workers example - cron trigger + D1 for counters/state.
+# Replace {WORKER_NAME}, {GENERATED_SECRET}, {DB_NAME}, {DB_ID}.
+name = "{WORKER_NAME}"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+CRON_SECRET = "{GENERATED_SECRET}"   # generate: openssl rand -hex 32
+
+# Run writer every 6 hours (configurable; max posts/day enforced in code)
+[triggers]
+crons = ["0 */6 * * *"]
+
+# D1 = SQLite for counters/state. NEVER use KV for high-frequency writes
+# (KV free tier caps at ~1,000 puts/day).
+[[d1_databases]]
+binding = "DB"
+database_name = "{DB_NAME}"
+database_id = "{DB_ID}"
+
+# Secrets (set via `wrangler secret put`): AI key(s), GSC service account.
+# Do NOT put real secrets in this file.
+# - AI_API_KEY_ENV
+# - GSC_SERVICE_ACCOUNT

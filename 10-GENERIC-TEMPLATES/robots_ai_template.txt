@@ -1,0 +1,59 @@
+﻿# robots.txt - AI crawler policy.
+# Policy: allow public content to everyone, block app/dashboard paths.
+# Googlebot stays fully allowed for indexing.
+# Replace {SITE_URL}.
+
+# --- Search engines (keep allowed) ---
+User-agent: Googlebot
+Allow: /
+Disallow: /dashboard/
+Disallow: /api/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /dashboard/
+Disallow: /api/
+
+# --- AI crawlers: same policy (or Disallow: / to block entirely) ---
+User-agent: GPTBot
+Allow: /
+Disallow: /dashboard/
+Disallow: /api/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /dashboard/
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /dashboard/
+Disallow: /api/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /dashboard/
+Disallow: /api/
+
+User-agent: anthropic-robot
+Allow: /
+Disallow: /dashboard/
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /dashboard/
+Disallow: /api/
+
+# Google-Extended controls use in AI training; separate from indexing.
+User-agent: Google-Extended
+Disallow: /dashboard/
+Disallow: /api/
+
+User-agent: CCBot
+Allow: /
+Disallow: /dashboard/
+Disallow: /api/
+
+# --- Sitemap ---
+Sitemap: https://{SITE_URL}/sitemap.xml

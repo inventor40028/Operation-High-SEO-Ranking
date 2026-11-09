@@ -1,0 +1,36 @@
+﻿{
+  "$comment": "Schema for a document in the blog_questions queue. Adapt collection/table name to your stack.",
+  "example": {
+    "question": "How much does it cost to rent a car in Miami?",
+    "slug": "how-much-does-it-cost-to-rent-a-car-in-miami",
+    "status": "queued",
+    "track": "business",
+    "source": "gsc",
+    "priority": 5,
+    "createdAt": "2026-11-09T12:00:00Z",
+    "publishedAt": null,
+    "postId": null,
+    "metadata": {
+      "clicks": 42,
+      "impressions": 2100,
+      "position": 9.2
+    }
+  },
+  "fields": {
+    "question": "string, required - the exact question to answer",
+    "slug": "string, required - future URL slug",
+    "status": "enum: queued | generating | published | failed | skipped",
+    "track": "enum: business | developer | default (make configurable)",
+    "source": "enum: manual | gsc | gap | competitor",
+    "priority": "number - higher sorts first",
+    "createdAt": "ISO 8601 timestamp",
+    "publishedAt": "ISO 8601 | null",
+    "postId": "string | null - id of the published post",
+    "metadata": "object | null - optional GSC/metrics context for the research step"
+  },
+  "rules": {
+    "daily_cap_per_track": "enforce per-track daily publish caps separately",
+    "retry": "failed items stay in queue and retry next cycle; do not drop",
+    "dedup": "normalize question (lowercase/trim) before insert to prevent duplicates"
+  }
+}
